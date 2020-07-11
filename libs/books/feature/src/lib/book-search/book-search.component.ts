@@ -9,7 +9,6 @@ import {
 } from '@tmo/books/data-access';
 import { FormBuilder } from '@angular/forms';
 import { Book } from '@tmo/shared/models';
-
 @Component({
   selector: 'tmo-book-search',
   templateUrl: './book-search.component.html',
@@ -53,6 +52,14 @@ export class BookSearchComponent implements OnInit {
   }
 
   searchBooks() {
+    if (this.searchForm.value.term) {
+      this.store.dispatch(searchBooks({ term: this.searchTerm }));
+    } else {
+      this.store.dispatch(clearSearch());
+    }
+  }
+
+  onSearchChange(): void {
     if (this.searchForm.value.term) {
       this.store.dispatch(searchBooks({ term: this.searchTerm }));
     } else {
