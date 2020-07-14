@@ -1,6 +1,7 @@
+import { ReadingListItem } from './../../../../shared/models/src/models';
 import { Injectable } from '@nestjs/common';
 import { StorageService } from '@tmo/shared/storage';
-import { Book, ReadingListItem } from '@tmo/shared/models';
+import { Book } from '@tmo/shared/models';
 
 const KEY = '[okreads API] Reading List';
 
