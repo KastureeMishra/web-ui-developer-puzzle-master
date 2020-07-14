@@ -31,7 +31,8 @@ const EXPORTS = [
     RouterModule.forChild([
       { path: '', pathMatch: 'full', component: BookSearchComponent }
     ]),
-    BooksDataAccessModule
+    BooksDataAccessModule,
+    MatSnackBarModule
   ],
   exports: [...EXPORTS],
   declarations: [...EXPORTS]
